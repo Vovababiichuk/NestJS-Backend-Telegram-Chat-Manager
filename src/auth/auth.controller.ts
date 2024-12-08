@@ -1,4 +1,12 @@
-import { Body, Controller, Post, Put, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Post,
+  Put,
+  Req,
+  UseGuards,
+  Request,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignupDto } from './dtos/signup.dto';
 import { LoginDto } from './dtos/login.dto';
@@ -51,5 +59,11 @@ export class AuthController {
       resetPasswordDto.newPassword,
       resetPasswordDto.resetToken,
     );
+  }
+
+  @Post('logout')
+  @UseGuards(AuthenticationGuard)
+  async logout(@Request() req) {
+    return this.authService.logout(req.userId);
   }
 }

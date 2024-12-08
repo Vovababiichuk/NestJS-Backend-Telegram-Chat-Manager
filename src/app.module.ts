@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MailService } from './services/mail.service';
+import { TelegramModule } from './telegram/telegram.module';
 import config from './config/config';
 
 @Module({
@@ -31,6 +32,7 @@ import config from './config/config';
       inject: [ConfigService],
     }),
     AuthModule,
+    TelegramModule,
   ],
   controllers: [AppController],
   providers: [AppService, MailService],

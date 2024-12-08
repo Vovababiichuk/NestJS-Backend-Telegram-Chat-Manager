@@ -176,4 +176,10 @@ export class AuthService {
       },
     );
   }
+
+  async logout(userId: string) {
+    // Видалення refresh токена
+    await this.RefreshTokenModel.deleteOne({ userId });
+    return { message: 'Logged out successfully' };
+  }
 }
