@@ -12,8 +12,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   // @Permissions([{ resource: Resource.settings, actions: [Action.read] }])
+  // @Get()
+  // someProtectedRoute(@Req() req) {
+  //   return { message: 'Accessed Resource', userId: req.userId };
+  // }
   @Get()
-  someProtectedRoute(@Req() req) {
-    return { message: 'Accessed Resource', userId: req.userId };
+  getHello(): string {
+    return this.appService.getHello();
   }
 }
