@@ -1,10 +1,5 @@
 import { Type } from 'class-transformer';
-import {
-    ArrayUnique,
-  IsEnum,
-  IsString,
-  ValidateNested,
-} from 'class-validator';
+import { ArrayUnique, IsEnum, IsString, ValidateNested } from 'class-validator';
 import { Action } from '../enums/action.enum';
 import { Resource } from '../enums/resource.enum';
 
