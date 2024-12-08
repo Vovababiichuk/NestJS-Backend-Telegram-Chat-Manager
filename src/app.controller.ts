@@ -1,6 +1,6 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
-import { AuthenticationGuard } from 'src/guards/authentication.guard';
+import { AuthenticationGuard } from './guards/auth.guard';
 
 @UseGuards(AuthenticationGuard)
 @Controller()
