@@ -7,7 +7,7 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 
 @UseGuards(AuthenticationGuard, AuthorizationGuard)
-@Controller('/products')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
