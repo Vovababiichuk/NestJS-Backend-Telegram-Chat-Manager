@@ -1,10 +1,6 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 import { AuthenticationGuard } from './guards/authentication.guard';
-// import { Permissions } from './decorators/permissions.decorator';
-// import { Resource } from './roles/enums/resource.enum';
-// import { Action } from './roles/enums/action.enum';
-// import { AuthorizationGuard } from './guards/authorization.guard';
 
 @UseGuards(AuthenticationGuard)
 @Controller()

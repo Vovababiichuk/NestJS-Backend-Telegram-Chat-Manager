@@ -5,7 +5,6 @@ import { AuthModule } from './auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { RolesModule } from './roles/roles.module';
 import { MailService } from './services/mail.service';
 import config from './config/config';
 
@@ -32,7 +31,6 @@ import config from './config/config';
       inject: [ConfigService],
     }),
     AuthModule,
-    RolesModule,
   ],
   controllers: [AppController],
   providers: [AppService, MailService],
