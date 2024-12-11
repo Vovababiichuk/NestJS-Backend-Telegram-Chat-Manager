@@ -42,8 +42,8 @@ export class TransactionController {
 	@UseGuards(JwtAuthGuard)
 	findAllWithPagination(
 		@Req() req,
-		@Query('page') page: number = 1,
-		@Query('limit') limit: number = 3,
+		@Query('page') page = 1,
+		@Query('limit') limit = 3,
 	) {
 		return this.transactionService.findAllWithPagination(
 			+req.user.id,
